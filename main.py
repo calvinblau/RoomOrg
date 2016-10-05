@@ -4,6 +4,7 @@ import math
 #Author of file: Maximus
 
 def main():
+	print("Hello world")
 	pass
 
 if "__main__" == __main__:
