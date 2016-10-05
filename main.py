@@ -1,4 +1,4 @@
-#Test fdastan
+#Test
 import math
 #Date: 05.10.2016
 #Author of file: Maximus
