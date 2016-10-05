@@ -1,0 +1,7 @@
+import math
+
+def main():
+	pass
+
+if "__main__" == __main__:
+	main()
