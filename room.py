@@ -18,17 +18,29 @@ class Room():
 			self.room_size = room_size		
 		pass
 
-		
+
 	def __del__(self):
 		pass
 
 	def addUser(self, user = None):
 		#branch if user is object or number
+		
+		if user is None:
+			pass
+		elif type(user) is str:
+			pass
+
 		pass
 
 	
 	def delUser(self, user = None):
 		#branch if user is object or number
+
+		if user is None:
+			pass
+		elif type(user) is str:
+			pass
+
 		pass
 
 
