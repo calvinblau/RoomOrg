@@ -8,6 +8,7 @@ class User():
 		self.surname = user_surname
 		self.name = user_name
 		self.age = user_age
+                self.mail = user_mail
 		self.phone = user_phone
 		self.address = user_address
 		pass
