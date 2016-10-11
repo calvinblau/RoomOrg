@@ -3,14 +3,15 @@
 #Author of file: Maximus
 
 class Room():
-	def __init__(self, room_number = None, room_name = None, room_available = None, room_size = None):
+	def __init__(self, room_number = None, room_name = None, 
+					room_available = None, room_size = None):
 
-		if room_number is None and room_name is None and room_available is None and room_size is None:
+		if (room_number is None and room_name is None 
+				and room_available is None and room_size is None):
 			self.number = 0;
 			self.name = "Empty Room"
 			self.available = True
-			self.size = -1
-
+			self.size = -1			
 		else:
 			self.number = room_number
 			self.name = room_name
