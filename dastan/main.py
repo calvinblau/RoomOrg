@@ -1,6 +1,6 @@
-from room import *
-from user import *
-from sys import *
+from room import Room
+from user import User
+import sys
 import math
 
 userlist = {}
@@ -20,7 +20,8 @@ def import_user(filename):
 
         for i in range(0, len(user)):
             data = user[i].split(";")
-            userlist["user" + str(i)] = User(data[0], data[1], data[2], data[3], data[4], data[5])
+            userlist["user" + str(i)] = User(data[0], data[1], data[2], 
+                    data[3], data[4], data[5])
 
         return userlist
     else:
@@ -40,12 +41,16 @@ def export_user(filename):
     else:
         pass
 
-def new_room(room_number = None, room_name = None, room_available = None, room_size = None):
-    length = len(roomlist)    
-    if room_number is None and room_name is None and room_available is None and room_size is None:
-        roomlist["room" + str(length)] = Room()
+def new_user(name, surname, age, mail, phone, address):
+    userlist["user" + str(len(userlist))] = User(name, surname, 
+            age, mail, phone, address)
+
+def new_room(number = None, name = None, available = None, size = None):
+    if number is None and name is None and available is None and size is None:
+        roomlist["room" + str(len(roomlist))] = Room()
     else:
-        roomlist["room" + str(length)] = Room(length, room_name, room_available, room_size)
+        roomlist["room" + str(len(roomlist))] = Room(len(roomlist), name, 
+                available, size)
 
     return roomlist
 
@@ -85,11 +90,9 @@ def main():
     users = import_user("personen.csv")
     new_room(21,'raum21',True,2)
     alloc_room(roomlist['room0'], userlist['user1'])
-    #print(roomlist)
-    #print(userlist)
     print(roomlist['room0'].user.name)
-    dealloc_room(roomlist['room0'])
-    print(roomlist['room0'].user)
-    
-#if "__main__" == __main__:
-main()
+    new_user('hany', 'bal', '30', 'mail', 'phone', 'address')
+    export_user("personen1.csv")    
+
+if __name__ == "__main__":
+    main()
